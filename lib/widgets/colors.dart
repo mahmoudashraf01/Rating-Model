@@ -14,3 +14,4 @@ Color darkYellow = const Color.fromARGB(255, 250, 136, 7);
 Color orange = const Color.fromARGB(255, 232, 93, 4);
 Color ligthRed = const Color.fromARGB(255, 174, 7, 7);
 const Color transparent = Colors.transparent;
+Color perple = Colors.deepPurple.shade100;

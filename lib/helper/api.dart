@@ -27,13 +27,13 @@ class Api {
   }
 
   Future<dynamic> put({required String url, @required dynamic body}) async {
-    http.Response response = await http.put(Uri.parse('url'), body: body);
-    Map<String,String> headers = {};
-    headers.addAll({
-      'Content-Type':'application/x-www-form-urlencoded'
-    });
+    Map<String, String> headers = {};
+    headers.addAll({'Content-Type': 'application/x-www-form-urlencoded'});
+    http.Response response =
+        await http.put(Uri.parse(url), body: body, headers: headers);
 
     if (response.statusCode == 200) {
+      print(jsonDecode(response.body));
       return jsonDecode(response.body);
     } else {
       throw Exception(

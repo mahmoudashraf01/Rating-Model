@@ -1,8 +1,7 @@
-
 class ProductModle {
-  final int id;
+  final dynamic id;
   final String title;
-  final double price;
+  final String price;
   final String description;
   final String category;
   final String image;
@@ -22,7 +21,7 @@ class ProductModle {
     return ProductModle(
       id: json["id"],
       title: json["title"],
-      price: json["price"],
+      price: json["price"].toString(),
       description: json["description"],
       category: json["category"],
       image: json["image"],
@@ -32,7 +31,7 @@ class ProductModle {
 }
 
 class RatingModel {
-  final double rate;
+  final dynamic rate;
   final int count;
 
   RatingModel({
@@ -44,6 +43,35 @@ class RatingModel {
     return RatingModel(
       rate: json["rate"],
       count: json["count"],
+    );
+  }
+}
+
+class ProductModle2 {
+  final dynamic id;
+  final String title;
+  final String price;
+  final String description;
+  final String category;
+  final String image;
+
+  ProductModle2({
+    required this.id,
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.category,
+    required this.image,
+  });
+
+  factory ProductModle2.fromJson(json) {
+    return ProductModle2(
+      id: json["id"],
+      title: json["title"],
+      price: json["price"].toString(),
+      description: json["description"],
+      category: json["category"],
+      image: json["image"],
     );
   }
 }

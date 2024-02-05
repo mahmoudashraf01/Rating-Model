@@ -1,8 +1,9 @@
 import 'package:rating_model/helper/api.dart';
 import 'package:rating_model/models/product_model.dart';
 
-class UpdateProduct{
-    Future<ProductModle> updateProduct({
+class UpdateProductService {
+  Future<ProductModle2> updateProduct({
+    required int id,
     required String title,
     required String price,
     required String desc,
@@ -10,7 +11,7 @@ class UpdateProduct{
     required String category,
   }) async {
     Map<String, dynamic> data = await Api().put(
-      url: 'https://fakestoreapi.com/products',
+      url: 'https://fakestoreapi.com/products/$id',
       body: {
         'title': title,
         'price': price,
@@ -19,7 +20,7 @@ class UpdateProduct{
         'category': category,
       },
     );
-    ProductModle productModle = ProductModle.fromJson(data);
+    ProductModle2 productModle = ProductModle2.fromJson(data);
     return productModle;
   }
 }
